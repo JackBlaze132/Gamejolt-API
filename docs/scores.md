@@ -70,8 +70,77 @@ import ScoreboardEmulator from '@site/src/components/ScoreboardEmulator';
 
 <ScoreboardEmulator />
 
+---
+
+## 🏎️ In-Game Scoring Scenario: The Quick Reaction Test
+
+Implementing scoreboards is not just about sending numbers; it's about creating engagement. Let's look at a "Reaction Test" scenario where every correct input counts toward a global ranking.
+
+### The Objective
+*   **Gameplay Loop**: A random letter appears on the screen. The player must press the matching key as fast as possible.
+*   **Scoring Logic**: Each correct keypress grants **50 points**. The player has a strict **5-second time limit**.
+*   **Result**: Once the timer hits zero, the game uploads the player's total score to the Game Jolt API and fetches the latest leaderboard to show the player's rank.
+
+### Implementation Guide (C# + Unity)
+
+To recreate this, your controller needs to track the timer and score, then use a `Scores.Add` call followed immediately by a `Scores.Get` to refresh the UI.
+
+```csharp
+using UnityEngine;
+using GameJolt.API;
+using System.Collections.Generic;
+
+public class TypingGameController : MonoBehaviour {
+    public int score = 0;
+    public float timeLeft = 5f;
+    private bool isGameActive = true;
+
+    void Update() {
+        if (!isGameActive) return;
+
+        timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0) {
+            EndGameAndUpload();
+        }
+
+        // Logic for checking key input (simplified)
+        if (Input.anyKeyDown && Input.GetKeyDown(currentLetter)) {
+            AddPoint();
+        }
+    }
+
+    void EndGameAndUpload() {
+        isGameActive = false;
+        
+        // 1. Upload the Score
+        Scores.Add(score, $"{score} pts", 0, "", (bool success) => {
+            if (success) {
+                // 2. Fetch the updated Leaderboard
+                FetchTopScores();
+            }
+        });
+    }
+
+    void FetchTopScores() {
+        Scores.Get((Score[] scores) => {
+            // Update your UI with the real leaderboard data here!
+            foreach(var s in scores) {
+                Debug.Log($"{s.Rank}. {s.PlayerName}: {s.Text}");
+            }
+        }, 0, 10); // Fetch top 10
+    }
+}
+```
+
+### Try the Typing Challenge
+Test your speed below! Hover or focus on the game area and press the letters as they appear. After 5 seconds, see how your "simulated" rank stacks up against other testers.
+
+import ScoreGameExample from '@site/src/components/ScoreGameExample';
+
+<ScoreGameExample />
+
 :::tip Implementation Tip
-For better performance, use **Batch Calls** if you need to fetch multiple tables at once. It reduces the number of HTTP requests and speeds up your game's menu load time.
+For real-time leaderboards, it's best to call `Scores.Get` **after** the `Scores.Add` callback returns `true`. This ensures the player's new score is actually included in the data you receive.
 :::
 
 :::info Next Step
