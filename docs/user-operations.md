@@ -38,30 +38,6 @@ public void GetUserInfo(string username) {
 
 ---
 
-## 🤝 Friends List
-
-You can fetch a list of friends for any logged-in user. This is great for showing leaderboards among friends or adding social features.
-
-```csharp
-using GameJolt.API;
-
-public void GetFriends() {
-    Friends.Get((User[] friends) => {
-        if (friends != null) {
-            foreach (var friend in friends) {
-                Debug.Log("Found friend: " + friend.Name);
-            }
-        }
-    });
-}
-```
-
-:::tip Implementation Tip
-You must define the **Friends** namespace in your project setup or SDK configuration before fetching the list.
-:::
-
----
-
 ## 🛰️ Essential Namespaces Overview
 
 As your game grows, you'll need more than just user profiles. Here's a breakdown of the key namespaces:

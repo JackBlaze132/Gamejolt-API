@@ -1,0 +1,233 @@
+.container {
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border: 4px solid #ccff00;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: 'VT323', monospace;
+  color: #fff;
+}
+
+.instructions {
+  background-color: #2a2731;
+  padding: 0.8rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  border: 1px dashed #ccff00;
+}
+
+.canvas {
+  position: relative;
+  height: 450px;
+  background-color: #000;
+  border: 2px solid #333;
+  overflow: hidden;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay, .gameArea, .resultsArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.startBtn, .pullBtn {
+  background: #ccff00;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  box-shadow: 4px 4px 0px #668800;
+}
+
+.startBtn:hover, .pullBtn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #668800;
+}
+
+.statusMsg {
+  margin-top: 1rem;
+  color: #ccff00;
+  font-size: 1.2rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  position: absolute;
+  top: 15px;
+}
+
+.playerIndicator {
+  padding: 5px 15px;
+  background: #222;
+  border-radius: 4px;
+}
+
+.playerIndicator.active {
+  background: #ccff00;
+  color: #000;
+  border: 2px solid #fff;
+}
+
+.towerInfo {
+  color: #888;
+  font-size: 1.2rem;
+}
+
+.towerVisual {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  perspective: 1200px;
+}
+
+.layer {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 25px;
+  position: relative;
+  margin-bottom: 2px;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.vertical {
+  flex-direction: row;
+  transform: rotateY(70deg); /* Simple 3D perspective trick */
+}
+
+.brick {
+  width: 45px;
+  height: 25px;
+  background: #d2a679;
+  border: 2px solid #5d4037;
+  margin: 0 2px;
+  border-radius: 2px;
+  box-shadow: 
+    inset 0 0 8px rgba(0,0,0,0.2), 
+    2px 2px 4px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.vertical .brick {
+  width: 20px; /* Thinner looking when viewed from side */
+  background: #ba8c59; /* Slightly darker Side color */
+}
+
+.grain {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 2px, transparent 2px, transparent 4px);
+}
+
+.shake {
+  animation: jitter 0.1s infinite;
+}
+
+.fall {
+  animation: collapse 0.8s forwards ease-in;
+}
+
+@keyframes jitter {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(2px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes collapse {
+  0% { transform: rotate(0) translateY(0); opacity: 1; }
+  20% { transform: rotate(5deg) translateY(0); }
+  100% { transform: rotate(45deg) translateY(500px); opacity: 0; }
+}
+
+/* Friend List Styling */
+.friendsOverlay {
+  padding: 1rem;
+  width: 90%;
+}
+
+.modalTitle { color: #ccff00; text-align: center; margin-bottom: 1rem; }
+
+.friendsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.friendCard {
+  background: #222;
+  border: 2px solid #444;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.friendCard:hover:not(.disabled) {
+  border-color: #ccff00;
+  background: #333;
+}
+
+.friendCard.disabled { opacity: 0.5; cursor: not-allowed; }
+
+.fName { font-size: 1.1rem; margin: 4px 0; }
+.fStatus { font-size: 0.8rem; text-transform: uppercase; }
+
+.online { color: #00ff00; }
+.offline { color: #888; }
+.away { color: #ffcc00; }
+
+.backBtn {
+  margin-top: 1rem;
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 5px 15px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+
+.winTitle {
+  color: #ccff00;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  animation: pulse 1s infinite;
+}
+
+.winText {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

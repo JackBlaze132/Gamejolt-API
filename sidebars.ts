@@ -24,7 +24,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Unity Integration',
-      items: ['unity-achievements', 'scores'],
+      items: ['unity-achievements', 'scores', 'unity-friends'],
     },
   ],
 };

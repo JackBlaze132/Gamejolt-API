@@ -60,3 +60,56 @@ DataStore.Delete("last_level", false, (bool success) => {
 :::warning Pro Tip
 The maximum size of a single data entry is **16MB**. Always try to compress your JSON payloads or keep your cloud-stored data minimal for performance!
 :::
+
+---
+
+## 🏗️ Cloud Settings Scenario
+
+In this scenario, we use the **Data-Store** to synchronize user preferences, such as a "UI Theme," across their account. This ensures that no matter where the user logs in, their game experience remains consistent.
+
+### 🎮 The Implementation Scenario
+
+When the player logs in, the game sends a `DataStore.Get` request to find their saved theme. If found, it instantly applies the "Cyber" or "Neon" look to the interface. Every time a theme is updated, a `DataStore.Set` call pushes the new preference to the cloud!
+
+import DataCloudExample from '@site/src/components/DataCloudExample';
+
+<DataCloudExample />
+
+### 🚀 Technical Implementation (Unity)
+
+To recreate this settings sync in your Unity project, use the following `CloudSettingsManager` pattern:
+
+```csharp
+using GameJolt.API;
+using UnityEngine;
+
+public class CloudSettingsManager : MonoBehaviour {
+    
+    // 1. Fetch settings on startup
+    public void LoadUserSettings() {
+        // Fetch "current_theme" for the logged-in user (global=false)
+        DataStore.Get("current_theme", false, (string themeValue) => {
+            if (themeValue != null) {
+                Debug.Log($"Applying theme: {themeValue}");
+                ApplyTheme(themeValue);
+            } else {
+                Debug.Log("No theme saved. Using default.");
+            }
+        });
+    }
+
+    // 2. Save settings when changed
+    public void UpdateTheme(string newTheme) {
+        DataStore.Set("current_theme", newTheme, false, (bool success) => {
+            if (success) {
+                Debug.Log("Theme synced to cloud!");
+            }
+        });
+    }
+
+    void ApplyTheme(string theme) {
+        // Logic to update your UI colors
+    }
+}
+```
+
