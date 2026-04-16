@@ -11,11 +11,11 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://ederd.github.io',
-  baseUrl: '/Gamejolt-Achievements-Wiki/',
+  url: 'https://JackBlaze132.github.io',
+  baseUrl: '/Gamejolt-API/',
 
-  organizationName: 'ederd',
-  projectName: 'Gamejolt-Achievements-Wiki',
+  organizationName: 'JackBlaze132',
+  projectName: 'Gamejolt-API',
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
