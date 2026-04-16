@@ -18,6 +18,13 @@ const sidebars: SidebarsConfig = {
     'intro',
     {
       type: 'category',
+      label: '🚀 Quickstart',
+      items: [
+        'installation'
+      ],
+    },
+    {
+      type: 'category',
       label: 'Core API Concepts',
       items: [
         'authentication', 

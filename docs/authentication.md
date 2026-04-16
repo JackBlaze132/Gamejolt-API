@@ -40,6 +40,16 @@ Behind the scenes, the API uses a "signature" to prevent tampering. This is form
 
 Most SDKs (like the Unity SDK) handle this for you automatically!
 
+---
+
+## 🔗 URL Construction
+
+If you are building a custom library, you need to follow our strict URL construction rules:
+
+1.  **Base URL**: All requests start with `https://api.gamejolt.com/api/game/v1/`.
+2.  **Parameters**: Add your `game_id`, `username`, and `user_token`.
+3.  **Signature**: Every request **must** be signed with your **Private Key** (see above).
+
 :::info Next Step
 Now that you know how to authenticate, let's look at how to manage [User Operations](./user-operations) like checking friends and profile data.
 :::
