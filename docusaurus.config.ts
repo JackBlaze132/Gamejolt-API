@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Game Jolt Achievement Wiki',
-  tagline: 'Integrate trophies with ease and style',
+  title: 'Game Jolt API Wiki',
+  tagline: 'Modern, Interactive Documentation for Unity & Web',
   favicon: 'img/favicon.ico',
 
   future: {
