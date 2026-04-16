@@ -23,13 +23,12 @@ const sidebars: SidebarsConfig = {
         'authentication', 
         'user-operations', 
         'data-storage',
-        'batch-requests'
       ],
     },
     {
       type: 'category',
       label: 'Unity Integration',
-      items: ['unity-achievements', 'scores', 'unity-friends'],
+      items: ['unity-achievements', 'scores', 'unity-friends', 'batch-requests'],
     },
   ],
 };
