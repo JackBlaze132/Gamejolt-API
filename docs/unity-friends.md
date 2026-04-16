@@ -119,8 +119,61 @@ To ensure the best social experience, you can use the **Sessions** system to che
 :::
 
 import JengaGameExample from '@site/src/components/JengaGameExample';
+import LobbyEmulator from '@site/src/components/LobbyEmulator';
 
 <JengaGameExample />
+
+---
+
+## 🏢 Advanced Scenario: The Battle Royale Lobby
+
+Can you use the Game Jolt API to group up 100 random players, sync their wins, levels, and achievements before matching? **Absolutely!** 
+
+While Game Jolt doesn't handle real-time physics (your game engine's job), it excels as the **"Global Source of Truth"** for discovering players and fetching their cross-session stats.
+
+### Interactive Lobby Discovery
+Click below to simulate how your game uses the **DataStore** to fetch a registry of 100 random players and sync their global stats (Wins, Level, Trophies) before the match starts.
+
+<LobbyEmulator />
+
+### Pro Implementation (C#)
+To achieve this for a 100-player lobby, you typically use a **Global DataStore Key** as a matchmaking board. Each player "Registers" their intent to join, and every other client fetches those names.
+
+```csharp
+using UnityEngine;
+using GameJolt.API;
+using System.Collections.Generic;
+
+public class LobbyManager : MonoBehaviour {
+    
+    // 1. Join the "Global Lobby" Registry
+    public void JoinGlobalLobby(string myRoomId) {
+        // We Use DataStore to 'Post' our presence for random discovery
+        DataStore.Set("global_lobby_entry_" + Users.CurrentUser.Name, myRoomId, true, (bool spec) => {
+            if (spec) Debug.Log("📡 Registered in Global Lobby!");
+        });
+    }
+
+    // 2. Fetch and Sync Stats for 100 players
+    public void SyncLobbyStats(List<string> playerUsernames) {
+        foreach (string name in playerUsernames) {
+            // Fetch their global stats for UI display
+            DataStore.Get("total_wins", false, (string wins) => {
+                Debug.Log($"📊 Synced {name}: {wins} Wins");
+            });
+
+            // Fetch their profile for Avatar/Levels
+            Users.Fetch(name, (User player) => {
+                Debug.Log($"👤 Fetched {player.Name} (Level {player.Type})");
+            });
+        }
+    }
+}
+```
+
+:::tip Efficiency
+Fetching stats for 100 players individually creates 100+ web requests. In a real game, you should use the **[Batch API](batch-requests.md)** to bundle player lookups into groups of 50 for much faster loading!
+:::
 
 ### 🛠️ Strategic Implementation: The Invitation Flow
 

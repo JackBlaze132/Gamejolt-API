@@ -1,0 +1,146 @@
+.container {
+  padding: 1rem;
+  background-color: #2a2731;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'VT323', monospace;
+  margin: 1.5rem 0;
+  border: 4px solid #ccff00;
+}
+
+.header {
+  border-bottom: 2px solid #555;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.header h3 {
+  color: #ccff00;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.canvas {
+  height: 480px;
+  background: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #333;
+}
+
+.overlay, .loadingArea {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.85);
+  z-index: 10;
+}
+
+.joinBtn {
+  background: #ccff00;
+  color: #000;
+  border: none;
+  padding: 20px 40px;
+  font-size: 1.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #2F7F6F;
+}
+
+.joinBtn:active { transform: translateY(5px); box-shadow: none; }
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #333;
+  border-top: 5px solid #ccff00;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.log {
+  color: #ccff00;
+  font-family: monospace;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.lobbyList {
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lobbyStats {
+  display: flex;
+  justify-content: space-between;
+  color: #ccff00;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.playerGrid {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding-right: 10px;
+}
+
+.playerCard {
+  background: #222;
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.playerCard.player { border-color: #ccff00; background: #2a2731; }
+
+.avatar {
+  background: #ccff00;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.info { display: flex; flex-direction: column; flex-grow: 1; }
+.name { color: #fff; font-size: 1.3rem; }
+.details { color: #888; font-size: 0.9rem; }
+
+.statusBadge {
+  background: rgba(204, 255, 0, 0.2);
+  color: #ccff00;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.leaveBtn {
+  margin-top: 15px;
+  background: transparent;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+  padding: 8px;
+  font-family: inherit;
+  cursor: pointer;
+}
