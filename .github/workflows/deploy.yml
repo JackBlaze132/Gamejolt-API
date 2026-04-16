@@ -7,6 +7,9 @@ on:
     # Review pull requests that target main
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     name: Deploy to GitHub Pages
