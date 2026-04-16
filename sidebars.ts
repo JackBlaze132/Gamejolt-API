@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Core API Concepts',
-      items: ['core-concepts', 'data-storage'],
+      items: ['authentication', 'user-operations', 'data-storage'],
     },
     {
       type: 'category',
