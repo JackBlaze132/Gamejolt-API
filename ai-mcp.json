@@ -1,0 +1,35 @@
+{
+  "name": "Game Jolt Achievement Wiki",
+  "description": "Interactive documentation for Game Jolt API achievements in Unity",
+  "version": "1.0.0",
+  "mcpVersion": "1.0",
+  "resources": [
+    {
+      "name": "Unity Achievement Guide",
+      "uri": "https://ederd.github.io/Gamejolt-Achievements-Wiki/docs/unity-achievements",
+      "description": "Primary documentation for Unity trophy integration including initialization, unlocking, and fetching trophies.",
+      "type": "documentation"
+    },
+    {
+      "name": "Trophy Emulator",
+      "uri": "https://ederd.github.io/Gamejolt-Achievements-Wiki/docs/unity-achievements#trophy-emulator",
+      "description": "An interactive component to simulate Game Jolt achievement popups.",
+      "type": "component"
+    }
+  ],
+  "capabilities": {
+    "prompts": [
+      {
+        "name": "explain-achievements",
+        "description": "Explains how to implement Game Jolt achievements in Unity with verified code samples.",
+        "arguments": [
+          {
+            "name": "id",
+            "description": "The Trophy ID from the Game Jolt dashboard",
+            "required": true
+          }
+        ]
+      }
+    ]
+  }
+}
