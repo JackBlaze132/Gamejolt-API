@@ -1,3 +1,7 @@
+---
+sidebar_label: "👥 Friends API (Social Features)"
+---
+
 # Unity: Friends & Social Features
 
 Learn how to integrate Game Jolt social features into your Unity game. Connect players, build friend lists, and create shared multiplayer experiences using the official Game Jolt Unity SDK.

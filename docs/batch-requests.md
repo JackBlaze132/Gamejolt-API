@@ -1,3 +1,7 @@
+---
+sidebar_label: "📦 Batch Requests"
+---
+
 # Batch Requests (Efficiency API)
 
 The **Game Jolt Batch API** is a powerful tool designed to optimize your game's performance. Instead of sending multiple individual network requests, you can bundle them into a single HTTP call.

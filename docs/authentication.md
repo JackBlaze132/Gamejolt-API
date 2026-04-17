@@ -1,3 +1,7 @@
+---
+sidebar_label: "🔑 API Authentication"
+---
+
 # API Authentication
 
 To use the Game Jolt Game API, you need to authenticate your game and the user currently playing it. This ensures that only your game can modify data and that achievements are awarded to the correct person.

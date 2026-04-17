@@ -1,3 +1,7 @@
+---
+sidebar_label: "💾 Cloud Data Storage"
+---
+
 # Cloud Data Storage (Save Games)
 
 The **Game Jolt Data-Store** is a cloud-based key-value system that allows you to store and retrieve data for your game. Perfect for:

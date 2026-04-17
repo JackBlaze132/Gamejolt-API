@@ -1,3 +1,7 @@
+---
+sidebar_label: "🏆 Trophies API (Achievements)"
+---
+
 # Unity Achievements API
 
 Learn how to integrate Game Jolt Trophies (Achievements) into your Unity game using the official Game Jolt Unity SDK.

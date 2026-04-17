@@ -1,3 +1,7 @@
+---
+sidebar_label: "👤 User Operations"
+---
+
 # User Operations
 
 User operations allow your game to interact with the Game Jolt profile of the person currently playing. This is essential for features like friends lists and personalized gameplay.

@@ -1,3 +1,7 @@
+---
+sidebar_label: "🛠️ Installation & Libraries"
+---
+
 # 🛠️ Installation & Libraries
 
 To start using the Game Jolt API, you first need to install the library or plugin appropriate for your game engine or programming language.
