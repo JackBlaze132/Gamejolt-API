@@ -1,5 +1,5 @@
 ---
-sidebar_label: "📦 Batch Requests"
+sidebar_label: "📦 Batch"
 ---
 
 # Batch Requests (Efficiency API)

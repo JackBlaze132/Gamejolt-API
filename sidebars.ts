@@ -25,9 +25,8 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Core API Concepts',
+      label: '⚙️ Core Concepts',
       items: [
-        'authentication', 
         'user-operations', 
         'data-storage',
         'url-structure',
@@ -36,8 +35,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '🕹️ Sessions',
+      label: '🌐 Sessions',
       items: [
+        'sessions/authentication',
         'sessions/open',
         'sessions/ping',
         'sessions/check',
@@ -46,7 +46,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Unity Integration',
+      label: '🪢 Integration',
       items: ['unity-achievements', 'scores', 'unity-friends', 'batch-requests'],
     },
   ],

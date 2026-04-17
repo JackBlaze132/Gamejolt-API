@@ -1,8 +1,8 @@
 ---
-sidebar_label: "📊 Leaderboards (Scores)"
+sidebar_label: "📊 Scores"
 ---
 
-# Leaderboards (Scores)
+# Scores API (Leaderboards)
 
 The **Game Jolt Score API** allows you to add multiple online score tables (scoreboards) to your game. This keeps players engaged as they compete for the top spots on global or level-specific rankings.
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "🔑 API Authentication"
+sidebar_label: "🔑 Authentication"
 ---
 
 # API Authentication
