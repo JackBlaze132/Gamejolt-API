@@ -30,6 +30,8 @@ const sidebars: SidebarsConfig = {
         'authentication', 
         'user-operations', 
         'data-storage',
+        'url-structure',
+        'data-formats',
       ],
     },
     {
