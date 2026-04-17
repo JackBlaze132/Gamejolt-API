@@ -7,10 +7,13 @@ const config: Config = {
   tagline: 'Modern, Interactive Documentation for Unity & Web',
   favicon: 'img/favicon.ico',
 
+  /*
   future: {
     v4: true,
   },
+  */
 
+  baseUrl: '/', // Changed from '/Gamejolt-API/' for local dev if needed, but let's just comment out faster
   url: 'https://JackBlaze132.github.io',
   baseUrl: '/Gamejolt-API/',
 

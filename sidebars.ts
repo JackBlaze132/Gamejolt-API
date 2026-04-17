@@ -36,6 +36,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '🕹️ Sessions',
+      items: [
+        'sessions/open',
+        'sessions/ping',
+        'sessions/check',
+        'sessions/close',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Unity Integration',
       items: ['unity-achievements', 'scores', 'unity-friends', 'batch-requests'],
     },
