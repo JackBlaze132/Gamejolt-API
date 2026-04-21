@@ -1,5 +1,5 @@
 ---
-sidebar_label: "🏆 Trophies"
+sidebar_label: "🪢 Integration"
 ---
 
 # Trophies API (Achievements)
