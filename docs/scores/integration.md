@@ -1,5 +1,5 @@
 ---
-sidebar_label: "📊 Scores"
+sidebar_label: "🪢 Integration"
 ---
 
 # Scores API (Leaderboards)

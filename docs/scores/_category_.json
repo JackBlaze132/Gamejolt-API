@@ -1,0 +1,8 @@
+{
+  "label": "Scores",
+  "position": 6,
+  "link": {
+    "type": "generated-index",
+    "description": "Game Jolt supports multiple online score tables, or scoreboards, per game. Gamers will keep coming back to try to achieve the highest scores for your game."
+  }
+}

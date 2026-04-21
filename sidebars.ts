@@ -46,8 +46,31 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '🏆 Trophies',
+      items: [
+        'trophies/intro',
+        'trophies/fetch',
+        'trophies/add-achieved',
+        'trophies/remove-achieved',
+        'trophies/integration',
+      ],
+    },
+    {
+      type: 'category',
+      label: '📊 Scores',
+      items: [
+        'scores/intro',
+        'scores/fetch',
+        'scores/tables',
+        'scores/add',
+        'scores/get-rank',
+        'scores/integration',
+      ],
+    },
+    {
+      type: 'category',
       label: '🪢 Integration',
-      items: ['unity-achievements', 'scores', 'unity-friends', 'batch-requests'],
+      items: ['unity-friends', 'batch-requests'],
     },
   ],
 };
